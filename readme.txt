@@ -5,8 +5,8 @@ Requires at least: 5.0
 Tested up to: 5.2
 Stable tag: trunk
 Requires PHP: 5.6.20
-License: GPLv3
-License URI: https://www.gnu.org/licenses/gpl-3.0.html
+License: GPLv2
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 Gutenberg block to serve China-based video to Chinese audience and YouTube video to everyone else.
 
@@ -15,6 +15,8 @@ Gutenberg block to serve China-based video to Chinese audience and YouTube video
 This Gutenberg block allows for embedding a video in a WordPress post or page.  If the user who views the page is in China, a different video will show from users in the rest of the world.  This is to appropriately deal with China's Internet wall which blocks YouTube and other video platforms.
 
 For more information on how to develop this block, please see the [github repo](https://github.com/cncf/china-video-block).
+
+The plugin has been developed for [CNCF](https://www.cncf.io/) and [The Linux Foundation](https://www.linuxfoundation.org/).
 
 == Installation ==
 
