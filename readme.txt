@@ -8,7 +8,7 @@ Requires PHP: 5.6.20
 License: GPLv2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Gutenberg block to serve China-based video to Chinese audience and YouTube video to everyone else.
+🇨🇳 🎬 🧱 Gutenberg block to serve China-based video to Chinese audience and YouTube video to everyone else.
 
 == Description ==
 
