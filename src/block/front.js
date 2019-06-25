@@ -6,7 +6,7 @@
 
 $( document ).ready(
 	function () {
-		var youku = $( '.wp-block-cvb-block-chinavid-video-block iframe' ),
+		var youku = $( '.wp-block-cvb-block-china-video-block iframe' ),
 		path = "path=/;"
 		d = new Date();
 		d.setTime( d.getTime() + (7 * 24 * 60 * 60 * 1000) ),
