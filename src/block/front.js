@@ -4,8 +4,7 @@
  * @package CGB
  */
 
-$( document ).ready(
-	function () {
+jQuery(document).ready(function( $ ) {
 		var youku = $( '.wp-block-cvb-block-china-video-block iframe' ),
 		path = "path=/;"
 		d = new Date();
@@ -47,5 +46,4 @@ $( document ).ready(
 		} else if (getCookie( "is_china" ) === "true") {
 			youku.attr( 'src', chinavid )
 		}
-	}
-);
+});
