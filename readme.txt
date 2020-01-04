@@ -31,6 +31,9 @@ The plugin has been developed for [CNCF](https://www.cncf.io/) and [The Linux Fo
 
 == Changelog ==
 
+= 0.2.1 =
+* added compiled build file
+
 = 0.2.0 =
 * rewrite of the code to favor the China video; the problem was that, when favoring the non-China video, it would produce a failed request for users in China since it was loaded on page load before being changed to the China video
 * when the ipinfo call produces and error, no cookie value is now set so that the call can be tried again during a subsequent page load
