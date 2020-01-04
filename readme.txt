@@ -2,7 +2,7 @@
 Contributors: cjyabraham
 Tags: China, video, block
 Requires at least: 5.0
-Tested up to: 5.2
+Tested up to: 5.3.2
 Stable tag: trunk
 Requires PHP: 5.6.20
 License: GPLv2
@@ -30,6 +30,10 @@ The plugin has been developed for [CNCF](https://www.cncf.io/) and [The Linux Fo
 1. China Video block inserted into a post.
 
 == Changelog ==
+
+= 0.2.0 =
+* rewrite of the code to favor the China video; the problem was that, when favoring the non-China video, it would produce a failed request for users in China since it was loaded on page load before being changed to the China video
+* when the ipinfo call produces and error, no cookie value is not set so that the call can be tried again during a subsequent page load
 
 = 0.1.0 =
 * First release

@@ -91,10 +91,10 @@ registerBlockType( 'cvb/block-china-video-block', {
 		return (
 			<div>
 				<script type="text/javascript">
-					var chinavid = '{chinavid}'; 
+					var worldvid = '{worldvid}'; 
 					var cvbIPInfoToken = '{cvbPHPVars.cvbIPInfoToken}';
 				</script>
-				<iframe width="560" height="315" src={worldvid} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				<iframe width="560" height="315" src={chinavid} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 				<script type="text/javascript" src={jsurl}></script>
 			</div>
 		);
