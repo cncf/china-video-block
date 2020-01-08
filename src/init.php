@@ -49,7 +49,7 @@ function china_video_block_cvb_block_assets() { // phpcs:ignore
 		'china_video_block-cgb-block-js',
 		'cvbPHPVars',
 		array(
-			'frontScriptURL' => plugins_url( '/src/block/front.js?ver=' . filemtime( dirname( __FILE__ ) . '/block/front.js' ), dirname( __FILE__ ) ),
+			'frontScriptURL' => plugins_url( '/src/block/front.js?ver=0.2.3', dirname( __FILE__ ) ),
 			'cvbIPInfoToken' => $options['cvb_ipinfo_token'],
 			'settingsURL' => get_site_url() . '/wp-admin/options-general.php?page=cvb',
 		)

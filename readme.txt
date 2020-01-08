@@ -31,6 +31,9 @@ The plugin has been developed for [CNCF](https://www.cncf.io/) and [The Linux Fo
 
 == Changelog ==
 
+= 0.2.3 =
+* fixed the ver number on the script so that the block doesn't keep breaking
+
 = 0.2.2 =
 * added a browser-busting version querystring for the front.js file so that browsers download the new file when it updates
 
