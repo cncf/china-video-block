@@ -31,6 +31,9 @@ The plugin has been developed for [CNCF](https://www.cncf.io/) and [The Linux Fo
 
 == Changelog ==
 
+= 0.2.4 =
+* loads the front-end script using wp_enqueue_script() only when the block is present on the page
+
 = 0.2.3 =
 * fixed the ver number on the script so that the block doesn't keep breaking
 

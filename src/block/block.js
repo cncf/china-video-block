@@ -87,7 +87,6 @@ registerBlockType( 'cvb/block-china-video-block', {
 	 */
 	save: function( props ) {
 		const { setAttributes, attributes: { chinavid, worldvid }} = props;
-		var jsurl = cvbPHPVars.frontScriptURL;
 		return (
 			<div>
 				<script type="text/javascript">
@@ -95,7 +94,6 @@ registerBlockType( 'cvb/block-china-video-block', {
 					var cvbIPInfoToken = '{cvbPHPVars.cvbIPInfoToken}';
 				</script>
 				<iframe width="560" height="315" src={chinavid} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-				<script type="text/javascript" src={jsurl}></script>
 			</div>
 		);
 	},

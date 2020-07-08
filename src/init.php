@@ -49,7 +49,6 @@ function china_video_block_cvb_block_assets() { // phpcs:ignore
 		'china_video_block-cgb-block-js',
 		'cvbPHPVars',
 		array(
-			'frontScriptURL' => plugins_url( '/src/block/front.js?ver=0.2.3', dirname( __FILE__ ) ),
 			'cvbIPInfoToken' => $options['cvb_ipinfo_token'],
 			'settingsURL' => get_site_url() . '/wp-admin/options-general.php?page=cvb',
 		)
@@ -74,7 +73,7 @@ function china_video_block_cvb_block_assets() { // phpcs:ignore
 	 * @since 1.16.0
 	 */
 	register_block_type(
-		'cgb/block-china-video-block',
+		'cvb/block-china-video-block',
 		array(
 			// Enqueue blocks.style.build.css on both frontend & backend.
 			// 'style'         => 'china_video_block-cgb-style-css',
@@ -88,3 +87,26 @@ function china_video_block_cvb_block_assets() { // phpcs:ignore
 
 // Hook: Block assets.
 add_action( 'init', 'china_video_block_cvb_block_assets' );
+
+
+
+/**
+ * Enqueue Gutenberg block assets for frontend and backend.
+ *
+ * @uses {wp-editor} for WP editor styles.
+ * @since 1.0.0
+ */
+function china_video_block_enqueue_assets() {
+	if ( has_block( 'cvb/block-china-video-block' ) && ! is_admin() ) {
+		wp_enqueue_script(
+			'china_video_block-front-js',
+			plugins_url( '/src/block/front.js', dirname( __FILE__ ) ),
+			array( 'jquery' ),
+			filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.build.js' ),
+			true
+		);
+	}
+
+}
+
+add_action( 'enqueue_block_assets', 'china_video_block_enqueue_assets' );
