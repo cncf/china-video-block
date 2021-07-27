@@ -32,7 +32,6 @@ function china_video_block_cvb_block_assets() { // phpcs:ignore
 	wp_register_style(
 		'china_video_block-cgb-style-css', // Handle.
 		plugins_url( 'dist/blocks.style.build.css', dirname( __FILE__ ) ), // Block style CSS.
-		array( 'wp-editor' ), // Dependency to include the CSS after it.
 		filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.style.build.css' ) // Version: File modification time.
 	);
 
@@ -40,7 +39,7 @@ function china_video_block_cvb_block_assets() { // phpcs:ignore
 	wp_register_script(
 		'china_video_block-cgb-block-js', // Handle.
 		plugins_url( '/dist/blocks.build.js', dirname( __FILE__ ) ), // Block.build.js: We register the block here. Built with Webpack.
-		array( 'wp-blocks', 'wp-i18n', 'wp-element', 'wp-editor' ), // Dependencies, defined above.
+		array( 'wp-blocks', 'wp-i18n', 'wp-element' ), // Dependencies, defined above.
 		filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.build.js' ), // Version: filemtime — Gets file modification time.
 		true // Enqueue the script in the footer.
 	);
@@ -49,8 +48,8 @@ function china_video_block_cvb_block_assets() { // phpcs:ignore
 		'china_video_block-cgb-block-js',
 		'cvbPHPVars',
 		array(
-			'cvbIPInfoToken' => $options['cvb_ipinfo_token'],
-			'settingsURL' => get_site_url() . '/wp-admin/options-general.php?page=cvb',
+			'cvbIPInfoToken' => $options['cvb_ipinfo_token'] ?? '',
+			'settingsURL'    => get_site_url() . '/wp-admin/options-general.php?page=cvb',
 		)
 	);
 
@@ -106,7 +105,6 @@ function china_video_block_enqueue_assets() {
 			true
 		);
 	}
-
 }
 
 add_action( 'enqueue_block_assets', 'china_video_block_enqueue_assets' );
