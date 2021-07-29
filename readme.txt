@@ -1,5 +1,5 @@
 === China Video Block ===
-Contributors: cjyabraham
+Contributors: cjyabraham, bonkerz
 Tags: China, video, block
 Requires at least: 5.0
 Tested up to: 5.8.0
