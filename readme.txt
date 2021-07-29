@@ -2,7 +2,7 @@
 Contributors: cjyabraham
 Tags: China, video, block
 Requires at least: 5.0
-Tested up to: 5.3.2
+Tested up to: 5.8.0
 Stable tag: trunk
 Requires PHP: 5.6.20
 License: GPLv2
@@ -30,6 +30,10 @@ The plugin has been developed for [CNCF](https://www.cncf.io/) and [The Linux Fo
 1. China Video block inserted into a post.
 
 == Changelog ==
+
+= 0.2.5 =
+Fixes PHP Notice "Trying to access array offset on value of type bool"
+WordPress 5.8 compatibility
 
 = 0.2.4 =
 * loads the front-end script using wp_enqueue_script() only when the block is present on the page

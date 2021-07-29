@@ -13,7 +13,7 @@ import './editor.scss';
 
 const { __ } = wp.i18n; // Import __() from wp.i18n.
 const { registerBlockType } = wp.blocks; // Import registerBlockType() from wp.blocks.
-const { PlainText } = wp.editor;
+const { PlainText } = wp.blockEditor;
 
 /**
  * Register: aa Gutenberg Block.
@@ -29,71 +29,52 @@ const { PlainText } = wp.editor;
  *                             registered; otherwise `undefined`.
  */
 registerBlockType( 'cvb/block-china-video-block', {
-	// Block name. Block names must be string that contains a namespace prefix. Example: my-plugin/my-custom-block.
-	title: __( 'China Video Block' ), // Block title.
-	icon: 'welcome-view-site', // Block icon from Dashicons → https://developer.wordpress.org/resource/dashicons/.
-	category: 'common', // Block category — Group blocks together based on common traits E.g. common, formatting, layout widgets, embed.
+	title: __( 'China Video Block' ),
+	icon: 'welcome-view-site',
+	category: 'common',
 	keywords: [
 		__( 'china video block' ),
 	],
 	attributes: {
-        chinavid: {
-			type: 'string'
+		chinavid: {
+			type: 'string',
 		},
 		worldvid: {
-            type: 'string'
-        }
-    },
-
-	/**
-	 * The edit function describes the structure of your block in the context of the editor.
-	 * This represents what the editor will render when the block is used.
-	 *
-	 * The "edit" property must be a valid function.
-	 *
-	 * @link https://wordpress.org/gutenberg/handbook/block-api/block-edit-save/
-	 */
+			type: 'string',
+		},
+	},
 	edit: function( props ) {
-		const { setAttributes, attributes: { chinavid, worldvid }} = props;
+		const { setAttributes, attributes: { chinavid, worldvid } } = props;
 
 		return (
 			<div className={ props.className }>
-				<p>This block will show the Chinese video to users in China and the World video to everyone else. You must have a valid IPInfo.io token in <a href={cvbPHPVars.settingsURL}>the settings</a> for this to work.</p>
+				<p>This block will show the Chinese video to users in China and the World video to everyone else. You must have a valid IPInfo.io token in <a href={ cvbPHPVars.settingsURL }>the settings</a> for this to work.</p>
 				<p>Chinese video (iframe "src" attribute):
 					<PlainText
 						value={ chinavid }
-						onChange={( value ) => setAttributes({ chinavid: value })}
+						onChange={ ( value ) => setAttributes( { chinavid: value } ) }
 						placeholder="https://v.qq.com/iframe/player.html?vid=f0718z01vwl&tiny=0&auto=0"
 					/>
 				</p>
 				<p>World video (iframe "src" attribute):
 					<PlainText
 						value={ worldvid }
-						onChange={( value ) => setAttributes({ worldvid: value })}
+						onChange={ ( value ) => setAttributes( { worldvid: value } ) }
 						placeholder="https://www.youtube.com/embed/1JAXMGqzMxs"
 					/>
 				</p>
 			</div>
-	);
+		);
 	},
-
-	/**
-	 * The save function defines the way in which the different attributes should be combined
-	 * into the final markup, which is then serialized by Gutenberg into post_content.
-	 *
-	 * The "save" property must be specified and must be a valid function.
-	 *
-	 * @link https://wordpress.org/gutenberg/handbook/block-api/block-edit-save/
-	 */
 	save: function( props ) {
-		const { setAttributes, attributes: { chinavid, worldvid }} = props;
+		const { attributes: { chinavid, worldvid } } = props;
 		return (
 			<div>
 				<script type="text/javascript">
-					var worldvid = '{worldvid}'; 
-					var cvbIPInfoToken = '{cvbPHPVars.cvbIPInfoToken}';
+					var worldvid = '{ worldvid }';
+					var cvbIPInfoToken = '{ cvbPHPVars.cvbIPInfoToken }';
 				</script>
-				<iframe width="560" height="315" src={chinavid} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				<iframe width="560" height="315" src={ chinavid } frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
 			</div>
 		);
 	},

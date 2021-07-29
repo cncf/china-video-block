@@ -4,7 +4,7 @@
  * Plugin URI: https://github.com/cncf/china-video-block
  * Description: Gutenberg block that embeds one video for users in China, another for everyone else.  Useful to accomodate video sites that are blocked in China.
  * Author: cjyabraham
- * Version: 0.2.4
+ * Version: 0.2.5
  * License: GPLv2
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  *

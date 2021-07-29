@@ -26,13 +26,12 @@ function cvb_settings_init() {
 		'cvb',
 		'cvb_section_developers',
 		[
-			'label_for' => 'cvb_ipinfo_token',
-			'class' => 'cvb_row',
+			'label_for'       => 'cvb_ipinfo_token',
+			'class'           => 'cvb_row',
 			'cvb_custom_data' => 'custom',
 		]
 	);
 }
-
 add_action( 'admin_init', 'cvb_settings_init' );
 
 /**
@@ -55,7 +54,7 @@ function cvb_ipinfo_token_cb( $args ) {
 	$options = get_option( 'cvb_options' );
 	?>
 	<input type="text" id="<?php echo esc_attr( $args['label_for'] ); ?>"
-	value="<?php echo esc_attr( $options['cvb_ipinfo_token'] ); ?>"
+	value="<?php echo esc_attr( $options['cvb_ipinfo_token'] ?? '' ); ?>"
 	name="cvb_options[<?php echo esc_attr( $args['label_for'] ); ?>]"
 	>
 	<p class="description">
@@ -76,7 +75,6 @@ function cvb_options_page() {
 		'cvb_options_page_html'
 	);
 }
-
 add_action( 'admin_menu', 'cvb_options_page' );
 
 
