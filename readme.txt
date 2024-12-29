@@ -12,7 +12,7 @@ Tested up to: 6.7.1
 License: GPLv2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-🇨🇳 🎬 🧱 Automatically serves China-hosted videos to Chinese audiences while delivering YouTube videos to viewers from other regions.
+🇨🇳 🎬 🧱 Automatically serve China-hosted videos to Chinese audiences while delivering YouTube videos to viewers from other regions.
 
 == Description ==
 

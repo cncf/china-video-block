@@ -1,0 +1,31 @@
+{
+	"landingPage": "/wp-admin/post.php?post=2&action=edit",
+	"preferredVersions": {
+		"php": "8.0",
+		"wp": "latest"
+	},
+	"steps": [
+		{
+			"step": "login",
+			"username": "admin",
+			"password": "password"
+		},
+		{
+			"step": "installPlugin",
+			"pluginPath": "."
+		},
+		{
+			"step": "activatePlugin",
+			"pluginSlug": "china-video-block",
+			"pluginPath": "."
+		},
+		{
+			"step": "createPage",
+			"title": "International Video",
+			"content": "<!-- wp:cvb/block-china-video-block {\"chinavid\":\"https://v.qq.com/iframe/player.html?vid=f0718z01vwl\",\"worldvid\":\"https://www.youtube.com/embed/1JAXMGqzMxs\",\"align\":\"wide\"} /-->"
+		}
+	],
+	"features": {
+		"networking": true
+	}
+}
