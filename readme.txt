@@ -1,22 +1,23 @@
 === China Video Block ===
+Plugin URI: https://github.com/cncf/china-video-block
 Contributors: cjyabraham, bonkerz
 Tags: China, video, block
-Requires at least: 5.0
-Tested up to: 5.8.0
 Stable tag: trunk
+Requires at least: 5.0
+Tested up to: 6.7.2
 Requires PHP: 7.4
 License: GPLv2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-🇨🇳 🎬 🧱 Gutenberg block to serve China-based video to Chinese audience and YouTube video to everyone else.
+🇨🇳 🎬 🧱 Block to serve China-based video to Chinese audience and YouTube video to everyone else.
 
 == Description ==
 
-🇨🇳 🎬 🧱 This Gutenberg block allows for embedding a video in a WordPress post or page.  If the user who views the page is in China, a different video will show from users in the rest of the world.  This is to appropriately deal with China's Internet wall which blocks YouTube and other video platforms.
-
-For more information on how to develop this block, please see the [github repo](https://github.com/cncf/china-video-block).
+🇨🇳 🎬 🧱 This block allows for embedding a video in a WordPress post or page.  If the user who views the page is in China, a different video will show from users in the rest of the world.  This is to appropriately deal with China's Internet wall which blocks YouTube and other video platforms.
 
 The plugin has been developed for [CNCF](https://www.cncf.io/) and [The Linux Foundation](https://www.linuxfoundation.org/).
+
+For more information on how to develop this block, please see the [github repo](https://github.com/cncf/china-video-block). PRs are welcome.
 
 == Installation ==
 
@@ -31,15 +32,18 @@ The plugin has been developed for [CNCF](https://www.cncf.io/) and [The Linux Fo
 
 == Changelog ==
 
+= 0.2.6 =
+* WordPress 6.7 compatibility
+
 = 0.2.5 =
-Fixes PHP Notice "Trying to access array offset on value of type bool"
-WordPress 5.8 compatibility
+* Fixes PHP Notice "Trying to access array offset on value of type bool"
+* WordPress 5.8 compatibility
 
 = 0.2.4 =
-* loads the front-end script using wp_enqueue_script() only when the block is present on the page
+* Loads the front-end script using wp_enqueue_script() only when the block is present on the page
 
 = 0.2.3 =
-* fixed the ver number on the script so that the block doesn't keep breaking
+* Fixed the ver number on the script so that the block doesn't keep breaking
 
 = 0.2.2 =
 * added a browser-busting version querystring for the front.js file so that browsers download the new file when it updates

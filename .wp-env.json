@@ -1,0 +1,30 @@
+{
+    "$schema": "https://raw.githubusercontent.com/WordPress/gutenberg/trunk/schemas/json/wp-env.json",
+    "core": null,
+    "plugins": [
+        "https://downloads.wordpress.org/plugin/query-monitor.zip",
+        "https://downloads.wordpress.org/plugin/plugin-check.zip",
+        "https://downloads.wordpress.org/plugin/code-snippets.zip",
+        "."
+    ],
+    "themes": [
+        "https://downloads.wordpress.org/theme/ollie.zip"
+    ],
+    "port": 8828,
+    "env": {
+        "development": {
+            "port": 8828
+        },
+        "tests": {
+            "port": 8829
+        }
+    },
+    "config": {
+        "SCRIPT_DEBUG": true,
+        "WP_DEBUG": true,
+        "WP_DEBUG_DISPLAY": true,
+        "WP_DISABLE_FATAL_ERROR_HANDLER": true,
+        "WP_ENVIRONMENT_TYPE": "local"
+    },
+    "phpVersion": "8.3"
+}

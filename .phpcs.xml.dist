@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<ruleset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="WordPress Coding Standards for plugin" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/squizlabs/PHP_CodeSniffer/master/phpcs.xsd">
+	<description>Generally-applicable sniffs for WordPress plugins.</description>
+
+	<!-- What to scan -->
+	<file>.</file>
+
+	<!-- Exclude Folders -->
+	<exclude-pattern>./.composer</exclude-pattern>
+	<exclude-pattern>./.docker</exclude-pattern>
+	<exclude-pattern>./.git</exclude-pattern>
+    <exclude-pattern>./.npm</exclude-pattern>
+	<exclude-pattern>/.ssh</exclude-pattern>
+	<exclude-pattern>./.vscode</exclude-pattern>
+	<exclude-pattern>/build</exclude-pattern>
+	<exclude-pattern>/dist</exclude-pattern>
+	<exclude-pattern>/utils</exclude-pattern>
+	<exclude-pattern>/languages</exclude-pattern>
+	<exclude-pattern>/node_modules</exclude-pattern>
+	<exclude-pattern>/vendor</exclude-pattern>
+	<exclude-pattern>*gulpfile*</exclude-pattern>
+
+	<!-- Settings -->
+	<arg value="spv"/>
+	<arg name="basepath" value="./"/>
+	<arg name="colors"/>
+	<arg name="extensions" value="php"/>
+	<ini name="memory_limit" value="512M" />
+	<arg name="parallel" value="8"/>
+
+	<config name="minimum_supported_wp_version" value="4.6"/>
+	<rule ref="WordPress"/>
+	<rule ref="WordPress.WhiteSpace.ControlStructureSpacing">
+		<properties>
+			<property name="blank_line_check" value="true"/>
+		</properties>
+	</rule>
+
+	<rule ref="Squiz.Commenting.ClassComment">
+        <exclude-pattern>*/tests/*</exclude-pattern>
+    </rule>
+    <rule ref="Squiz.Commenting.FunctionComment">
+        <exclude-pattern>*/tests/*</exclude-pattern>
+    </rule>
+    <rule ref="Squiz.Commenting.FileComment">
+        <exclude-pattern>*/tests/*</exclude-pattern>
+    </rule>
+</ruleset>

@@ -1,5 +1,5 @@
 {
-  "name": "china-video-block-cgb-guten-block",
+  "name": "china-video-block",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -8,6 +8,6 @@
     "eject": "cgb-scripts eject"
   },
   "dependencies": {
-    "cgb-scripts": "1.20.0"
+    "cgb-scripts": "1.23.1"
   }
 }
