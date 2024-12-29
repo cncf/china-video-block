@@ -1,10 +1,12 @@
 {
-	"folders": [
-		{
-			"path": "."
-		},
-		{
-			"path": "."
-		}
-	]
+    "folders": [
+        {
+            "path": "."
+        }
+    ],
+    "settings": {
+        "search.exclude": {
+            "**/build": true
+        }
+    }
 }

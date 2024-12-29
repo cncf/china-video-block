@@ -3,8 +3,13 @@
  * Creates a settings menu for the block.
  *
  * @since   1.0.0
- * @package CGB
+ * @package china-video-block
  */
+
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 
 /**
  * Sets up the settings menus.
@@ -14,22 +19,22 @@ function cvb_settings_init() {
 
 	add_settings_section(
 		'cvb_section_developers',
-		__( 'Settings for the China Video Block plugin.', 'cvb' ),
+		__( 'Settings for the China Video Block plugin.', 'china-video-block' ),
 		'cvb_section_developers_cb',
 		'cvb'
 	);
 
 	add_settings_field(
 		'cvb_ipinfo_token',
-		__( 'IPInfo.io token', 'cvb' ),
+		__( 'IPInfo.io token', 'china-video-block' ),
 		'cvb_ipinfo_token_cb',
 		'cvb',
 		'cvb_section_developers',
-		[
+		array(
 			'label_for'       => 'cvb_ipinfo_token',
 			'class'           => 'cvb_row',
 			'cvb_custom_data' => 'custom',
-		]
+		)
 	);
 }
 add_action( 'admin_init', 'cvb_settings_init' );
@@ -58,7 +63,7 @@ function cvb_ipinfo_token_cb( $args ) {
 	name="cvb_options[<?php echo esc_attr( $args['label_for'] ); ?>]"
 	>
 	<p class="description">
-	<?php esc_html_e( 'The China Video Block uses ipinfo.io to detect whether a user is in China.  Please provide a token for this service.', 'cvb' ); ?>
+	<?php esc_html_e( 'The China Video Block uses ipinfo.io to detect whether a user is in China.  Please provide a token for this service.', 'china-video-block' ); ?>
 	</p>
 	<?php
 }
@@ -76,7 +81,6 @@ function cvb_options_page() {
 	);
 }
 add_action( 'admin_menu', 'cvb_options_page' );
-
 
 /**
  * Callback functions.

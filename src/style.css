@@ -1,0 +1,32 @@
+@import './variables.css';
+
+/**
+ * Styles
+ *
+ * CSS for Frontend.
+ */
+
+.wp-block-cvb-block-china-video-block {
+	max-width: var(--wp--style--global--content-size, 740px);
+	margin: 0 auto;
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+}
+
+/* Wide alignment */
+.wp-block-cvb-block-china-video-block.alignwide {
+	max-width: var(--wp--style--global--wide-size, 1080px);
+}
+
+/* Full alignment */
+.wp-block-cvb-block-china-video-block.alignfull {
+	max-width: none;
+}
+
+/* Make iframe responsive */
+.wp-block-cvb-block-china-video-block iframe {
+	width: 100%;
+	aspect-ratio: 16 / 9;
+	height: unset;
+}

@@ -1,15 +1,18 @@
 === China Video Block ===
+Plugin Name: China Video Block
+Author: CNCF (Part of Linux Foundation)
 Plugin URI: https://github.com/cncf/china-video-block
 Contributors: cjyabraham, bonkerz
-Tags: China, video, block
-Stable tag: trunk
-Requires at least: 5.0
-Tested up to: 6.7.2
+Tags: china, chinese, video, youtube
+Version: 0.2.6
+Stable tag: 0.2.6
 Requires PHP: 7.4
+Requires at least: 5.0
+Tested up to: 6.7.1
 License: GPLv2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-🇨🇳 🎬 🧱 Block to serve China-based video to Chinese audience and YouTube video to everyone else.
+🇨🇳 🎬 🧱 Automatically serves China-hosted videos to Chinese audiences while delivering YouTube videos to viewers from other regions.
 
 == Description ==
 
@@ -34,6 +37,7 @@ For more information on how to develop this block, please see the [github repo](
 
 = 0.2.6 =
 * WordPress 6.7 compatibility
+* Plugin build modernisation
 
 = 0.2.5 =
 * Fixes PHP Notice "Trying to access array offset on value of type bool"

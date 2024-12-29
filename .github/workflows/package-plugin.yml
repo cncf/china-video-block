@@ -1,55 +1,55 @@
 name: Build and Package WordPress Plugin
 
 on:
-  push:
-    branches:
-      - '**'
-  pull_request:
-    branches:
-      - '**'
+    push:
+        branches:
+            - '**'
+    pull_request:
+        branches:
+            - '**'
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
+    build:
+        runs-on: ubuntu-latest
 
-    env:
-      PLUGIN_MAIN_FILE: china-video-block.php
-      PLUGIN_NAME: china-video-block
+        env:
+            PLUGIN_MAIN_FILE: china-video-block.php
+            PLUGIN_NAME: china-video-block
 
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v4
 
-    - name: Set up PHP
-      uses: shivammathur/setup-php@v2
-      with:
-        php-version: '7.4'
+            - name: Set up PHP
+              uses: shivammathur/setup-php@v2
+              with:
+                  php-version: '7.4'
 
-    - name: Set plugin variables
-      run: |
-        VERSION=$(awk '/Version:/ {print $NF; exit}' $PLUGIN_MAIN_FILE)
-        echo "PLUGIN_NAME=$PLUGIN_NAME" >> $GITHUB_ENV
-        echo "VERSION=$VERSION" >> $GITHUB_ENV
-        echo "Plugin Name: $PLUGIN_NAME"
-        echo "Version: $VERSION"
+            - name: Set plugin variables
+              run: |
+                  VERSION=$(awk '/Version:/ {print $NF; exit}' $PLUGIN_MAIN_FILE)
+                  echo "PLUGIN_NAME=$PLUGIN_NAME" >> $GITHUB_ENV
+                  echo "VERSION=$VERSION" >> $GITHUB_ENV
+                  echo "Plugin Name: $PLUGIN_NAME"
+                  echo "Version: $VERSION"
 
-    - name: Clean releases directory
-      run: rm -rf releases/*
+            - name: Clean releases directory
+              run: rm -rf releases/*
 
-    - name: Create release directory
-      run: |
-        mkdir -p "releases/$PLUGIN_NAME/"
+            - name: Create release directory
+              run: |
+                  mkdir -p "releases/$PLUGIN_NAME/"
 
-    - name: Copy necessary files
-      run: |
-        cp -R dist "$PLUGIN_MAIN_FILE" license.txt readme.txt "releases/$PLUGIN_NAME"
+            - name: Copy necessary files
+              run: |
+                  cp -R build "$PLUGIN_MAIN_FILE" license.txt readme.txt "releases/$PLUGIN_NAME"
 
-    - name: Upload release artifact
-      uses: actions/upload-artifact@v4
-      with:
-        name: ${{ env.PLUGIN_NAME }}
-        path: releases/${{ env.PLUGIN_NAME }}
-        if-no-files-found: error
-        retention-days: 7
-        compression-level: 6
-        overwrite: true
+            - name: Upload release artifact
+              uses: actions/upload-artifact@v4
+              with:
+                  name: ${{ env.PLUGIN_NAME }}
+                  path: releases/${{ env.PLUGIN_NAME }}
+                  if-no-files-found: error
+                  retention-days: 7
+                  compression-level: 6
+                  overwrite: true

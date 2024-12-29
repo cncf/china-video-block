@@ -7,7 +7,7 @@ This is a WordPress plugin which contains a Gutenberg block.  The block allows f
 
 This repo ships with its own wp-env ready to fire up a local development environment.
 
-Make sure you have node installed. Go to command line and check your version to confirm.
+Make sure you have node installed. Go to command line and check your version to confirm. We recommend nodejs 20.16.0.
 
 ```
 node -v
@@ -59,13 +59,13 @@ To install npm packages:
 npm install
 ```
 
-This project was bootstrapped with [Create Guten Block](https://github.com/ahmadawais/create-guten-block). To start development:
+To start development:
 
 ```
 npm start
 ```
 
-Use to compile and run the block in development mode. Watches for any changes and reports back any errors in your code.
+This will compile and run the block in development mode. Watches for any changes and reports back any errors in your code.
 
 To build your code:
 
@@ -73,7 +73,9 @@ To build your code:
 npm run build
 ```
 
-Use to build production code for your block inside `dist` folder. Runs once and reports back the gzip file sizes of the produced code.
+Use to build production code for your block inside `build` folder. Runs once. Run this before releasing a new version.
+
+You also have access to other wp-scripts commands, run `npm run` to see them.
 
 ## Composer
 
@@ -83,9 +85,7 @@ To install composer packages:
 wp-env run cli --env-cwd=wp-content/plugins/china-video-block composer install
 ```
 
-Once installed, you can then mulitple commands.
-
-To run sniffs:
+Once installed, you can then multiple commands. To run sniffs:
 
 ```
 wp-env run cli --env-cwd=wp-content/plugins/china-video-block composer run-script sniff
@@ -97,7 +97,7 @@ To fix sniffs:
 wp-env run cli --env-cwd=wp-content/plugins/china-video-block composer run-script fix
 ```
 
-To check PHP Compatability:
+To check PHP Compatibility:
 
 ```
 wp-env run cli --env-cwd=wp-content/plugins/china-video-block composer run-script version-checks
@@ -122,4 +122,4 @@ localhost:8828/wp-admin
 Username: admin
 Password: password
 
-Dont upgrade plugins and WordPress core inside WordPress, make any updates in the `.wp-env.json` file and then run `wp env start` or `wp-env start --update`. This will download and install the updates.
+Don't upgrade plugins and WordPress core inside WordPress, make any updates in the `.wp-env.json` file and then run `wp env start` or `wp-env start --update`. This will download and install the updates.

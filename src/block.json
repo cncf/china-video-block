@@ -1,0 +1,27 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "cvb/block-china-video-block",
+	"version": "0.2.6",
+	"title": "China Video Block",
+	"category": "common",
+	"icon": "welcome-view-site",
+	"description": "Block that embeds one video for users in China, another for everyone else.",
+	"keywords": [ "china video block", "video", "youtube" ],
+	"supports": {
+		"align": [ "wide", "full" ],
+		"anchor": true
+	},
+	"attributes": {
+		"chinavid": {
+			"type": "string"
+		},
+		"worldvid": {
+			"type": "string"
+		}
+	},
+	"textdomain": "china-video-block",
+	"editorScript": "file:../build/block.js",
+	"editorStyle": "file:../build/block.css",
+	"style": "file:../build/style-block.css"
+}

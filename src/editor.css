@@ -1,0 +1,16 @@
+@import './variables.css';
+
+/**
+ * #.# Editor Styles
+ *
+ * CSS for just Backend.
+ */
+
+.wp-block-cvb-block-china-video-block {
+	background: var(--cvb-green);
+	border: 0.2rem solid var(--cvb-black);
+	color: var(--cvb-black);
+	margin: 0 auto;
+	max-width: var(--wp--style--global--content-size, 740px);
+	padding: 2rem;
+}

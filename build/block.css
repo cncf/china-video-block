@@ -1,0 +1,2 @@
+:root{--cvb-black:#292929;--cvb-white:#f4f4f4;--cvb-gray:#dedede;--cvb-green:#bada55;--cvb-red:#ff4500}
+.wp-block-cvb-block-china-video-block{background:var(--cvb-green);border:.2rem solid var(--cvb-black);color:var(--cvb-black);margin:0 auto;max-width:var(--wp--style--global--content-size,740px);padding:2rem}
